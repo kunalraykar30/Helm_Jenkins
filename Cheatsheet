@@ -24,6 +24,6 @@ ownloaded the charts already
 # helm history -n helm-ns kunal-db              => Check the history of the version
 # helm rollback 1 -n helm-demo kunal-db         => Rollback deployment to pervious verison
 
-# helm create my-charts                                                 => Create new charts
-# helm uninstall my-charts                                      => Uninstall charts
-# helm delete my-charts                                                 => Delete the when everything is stuck
+# helm create my-charts                         => Create new charts
+# helm uninstall my-charts                      => Uninstall charts
+# helm delete my-charts                         => Delete the when everything is stuck
