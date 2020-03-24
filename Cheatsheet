@@ -1,0 +1,26 @@
+# helm version 
+
+
+# helm repo add kunalcharts https://kubernetes-charts.storage.googleapis.com/  		=> Initialize Official Repo of Helm 
+# helm repo list 																=>  List repos of Helm 
+# helm search repo kunalcharts 													=>  Search charts in the Helm Repo 
+# helm search repo redis 														=>  Search redis in repo 
+
+# helm install kunal-db kunalcharts/mariadb 						=> Install the mariadb archive from repo
+# helm pull  kunalcharts/mariadb									=> Download the tarball of charts from repo for viewing 
+# helm install kunal-db ./mariadb --namespace=helm-ns 				=> Install the mariadb if you have downloaded the charts already 
+# helm get values kunal-db 											=> Print values with charts was installed
+
+# helm ls 															=> List the deployed releases in default namespace
+# helm ls --all														=> List all the deleted and installed charts 
+# helm ls -n helm-ns 												=> List the deployed charts in the namespace
+# helm uninstall kunal-db											=> Uninstall release 
+
+# helm upgrade kunal-db ./kunaldb --set redis.slaveEnabled=false,service.type=NodePort --namespace helm-ns
+
+# helm history -n helm-ns kunal-db 						=> Check the history of the version 
+# helm rollback 1 -n helm-demo kunal-db 				=> Rollback deployment to pervious verison 
+
+# helm create my-charts									=> Create new charts
+# helm uninstall my-charts 								=> Uninstall charts 
+# helm delete my-charts 								=> Delete the when everything is stuck 
