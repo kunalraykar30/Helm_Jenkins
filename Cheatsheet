@@ -1,17 +1,14 @@
 # helm version
 
-
-# helm repo add kunalcharts https://kubernetes-charts.storage.googleapis.com/           => Initializ
-e Official Repo of Helm
+# helm repo add kunalcharts https://kubernetes-charts.storage.googleapis.com/           => Initialize Official Repo of Helm
 # helm repo list                                =>  List repos of Helm
 # helm search repo kunalcharts                  =>  Search charts in the Helm Repo
 # helm search repo redis                        =>  Search redis in repo
 
 # helm install kunal-db kunalcharts/mariadb     => Install the mariadb archive from repo
-# helm pull  kunalcharts/mariadb                => Download the tarball of charts from repo for view
-ing
-# helm install kunal-db ./mariadb --namespace=helm-ns           => Install the mariadb if you have d
-ownloaded the charts already
+# helm install --dry-run --debug --version 3.17.0 stable/postgresql   => Using dry-run 
+# helm pull  kunalcharts/mariadb                => Download the tarball of charts from repo for viewing
+# helm install kunal-db ./mariadb --namespace=helm-ns           => Install the mariadb if you have downloaded the charts already
 # helm get values kunal-db                      => Print values with charts was installed
 
 # helm ls                                       => List the deployed releases in default namespace
