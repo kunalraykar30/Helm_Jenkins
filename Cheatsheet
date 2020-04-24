@@ -11,6 +11,9 @@
 # helm install kunal-db ./mariadb --namespace=helm-ns           => Install the mariadb if you have downloaded the charts already
 # helm get values kunal-db                      => Print values with charts was installed
 
+# helm inspect values kunalcharts/mariadb > /tmp/db.values 
+# helm install kunalcharts/mariadb --name kunal-db --values /tmp/db.values 
+
 # helm ls                                       => List the deployed releases in default namespace
 # helm ls --all                                 => List all the deleted and installed charts
 # helm ls -n helm-ns                            => List the deployed charts in the namespace
