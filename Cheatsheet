@@ -1,29 +1,56 @@
-# helm version
+# helm version						=> Display helm and tiller version 
+# helm version --short 
+# helm verison --short --client 
+# helm home 						=> Shows the home dir of helm 
+
+Config file locaiton => ./helm under the home dir 
+You will need to create the service account for tiller with admin access so tiller can create objects in cluster on your behalf. 
+
+###### Initialize the Helm ######
+
+# helm init --service-account tiller 			=> Initialize the helm and tiller. Here tiller is the serviceaccount create for helm
+
+###### Add repos in Helm ######
 
 # helm repo add kunalcharts https://kubernetes-charts.storage.googleapis.com/           => Initialize Official Repo of Helm
-# helm repo list                                =>  List repos of Helm
-# helm search repo kunalcharts                  =>  Search charts in the Helm Repo
-# helm search repo redis                        =>  Search redis in repo
+# helm repo list                                => List repos of Helm
+# helm search repo kunalcharts                  => Search charts in the Helm Repo
+# helm search repo jenkins                      => Search redis in repo
 
-# helm install kunal-db kunalcharts/mariadb     => Install the mariadb archive from repo
-# helm install --dry-run --debug --version 3.17.0 stable/postgresql   => Using dry-run 
-# helm pull  kunalcharts/mariadb                => Download the tarball of charts from repo for viewing
-# helm install kunal-db ./mariadb --namespace=helm-ns           => Install the mariadb if you have downloaded the charts already
-# helm get values kunal-db                      => Print values with charts was installed
+###### Install/Delete the charts using Helm ######
 
-# helm inspect values kunalcharts/mariadb > /tmp/db.values 
-# helm install kunalcharts/mariadb --name kunal-db --values /tmp/db.values 
+# helm inspect stable/jenkins 					=> Inspect the chart before installation
+# helm fetch stable/jenkins						=> Download/Fetch the tarball of jenkins from repo for viewing
+
+# helm install --dry-run --debug --version 3.17.0 stable/jenkins --name=myjenkins	=> Using dry-run before the installation
+# helm install stable/jenkins 														=> Install the Jenkins archive from repo
+
+# helm install jenkins ./jenkins --namespace=helm-ns           		    			=> Install the Jenkins if you have downloaded the charts already
+# helm get values jenkins                       									=> Print values with charts was installed
+
+# helm inspect values stable/jenkins > /tmp/jenkins.values 							=> Inspect values of the chart before installation 
+# helm install stable/jenkins --name myjenkins --values /tmp/jenkins.values 		=> Install chart with your values file and name 
+
+# helm delete myjenkins                       										=> Delete the installed chart release
+# helm del --purge myjenkins														=> Purge the deleted myjenkins 
+
+###### List installed Helm Charts ######
 
 # helm ls                                       => List the deployed releases in default namespace
 # helm ls --all                                 => List all the deleted and installed charts
 # helm ls -n helm-ns                            => List the deployed charts in the namespace
-# helm uninstall kunal-db                       => Uninstall release
 
 # helm upgrade kunal-db ./kunaldb --set redis.slaveEnabled=false,service.type=NodePort --namespace helm-ns
 
 # helm history -n helm-ns kunal-db              => Check the history of the version
 # helm rollback 1 -n helm-demo kunal-db         => Rollback deployment to pervious verison
 
+###### Create your own charts ######
+
 # helm create my-charts                         => Create new charts
 # helm uninstall my-charts                      => Uninstall charts
 # helm delete my-charts                         => Delete the when everything is stuck
+
+###### Removing the Helm and Tiller ######
+
+# helm reset --force 			=> Removes helm from the cluster --force removes helm even if the charts are installed
