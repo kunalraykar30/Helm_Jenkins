@@ -18,10 +18,9 @@ Here, I have created GKE Cluster for the installation of the Helm.
 # kubectx gke=gke_${PROJECT_ID}_us-central1-c_gke
     
 ```	
+GKE create a PersistentVolumeClaim ( Dynamically provisioning PersistentVolumes)and Kubernetes automatically provisions a persistent disk to the dpeloyment.
 
-I have done modification has been in the values of the helm chart
-
-
+## Installation fo the Helm 
 Seperate service account will be required for the helm in order to create the resouce/objects of the charts from template on Cluster
 ```
 # kubectl create serviceaccount tiller -n kube-system 
@@ -37,6 +36,7 @@ Seperate service account will be required for the helm in order to create the re
 ```
 Installation of Jenkins using Helm 
 
+Here before installation the jenkins I have modified the values of jenkins charts.
 ```
 # helm inspect values stable/jenkins > /tmp/jenkins.values
 # helm install stable/jenkins --values /tmp/jenkins.values --name myjenkins 
