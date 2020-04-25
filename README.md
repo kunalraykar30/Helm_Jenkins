@@ -23,11 +23,19 @@ Here, I have created GKE Cluster for the installation of the Helm.
 GKE create a PersistentVolumeClaim ( Dynamically provisioning PersistentVolumes)and Kubernetes automatically provisions a persistent disk to the dpeloyment.
 
 ## Installation fo the Helm 
+
+Need to edit this section 
+
+```
+# wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
+# tar -xvzf helm-v2.13.0-linux-amd64.tar.gz
+# mv linux-amd64 "$HELM_PATH"
+rm $WORKDIR/helm-"$HELM_VERSION"-linux-amd64.tar.gz
+```
 Seperate service account will be required for the helm in order to create the resouce/objects of the charts from template on Cluster
 ```
 # kubectl create serviceaccount tiller -n kube-system 
 # kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller 
-
 ```
 
 #### Initialize the tiller as server side component in kube-system 
