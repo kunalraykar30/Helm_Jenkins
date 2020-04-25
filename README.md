@@ -21,4 +21,19 @@ Here, I have created GKE Cluster for the installation of the Helm.
 
 I have done modification has been in the values of the helm chart
 
+```
+# kubectl create serviceaccount tiller -n kube-system 
+# kubectl create clusterrolebinding tiller --clusterrole cluster-admin --serviceaccount=kube-system:tiller 
 
+```
+
+# Initialize the tiller as server side component in kube-system 
+
+```
+helm init --service-account tiller 
+
+Jenkins installation using Helm 
+
+helm inspect values stable/jenkins > /tmp/jenkins.values
+helm install stable/jenkins --values /tmp/jenkins.values --name myjenkins 
+```
