@@ -27,13 +27,18 @@ I have done modification has been in the values of the helm chart
 
 ```
 
-# Initialize the tiller as server side component in kube-system 
+#### Initialize the tiller as server side component in kube-system 
 
 ```
-helm init --service-account tiller 
+# helm init --service-account tiller 
+# helm version
+```
+Installation of Jenkins using Helm 
 
-Jenkins installation using Helm 
+```
+# helm inspect values stable/jenkins > /tmp/jenkins.values
+# helm install stable/jenkins --values /tmp/jenkins.values --name myjenkins 
 
-helm inspect values stable/jenkins > /tmp/jenkins.values
-helm install stable/jenkins --values /tmp/jenkins.values --name myjenkins 
+# helm ls 
+# kubectl get po 
 ```
