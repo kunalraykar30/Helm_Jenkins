@@ -1,6 +1,6 @@
 # Helmcharts
 
-### Creation of GKE 
+## Creation of GKE 
 Here, I have created GKE Cluster for the installation of the Helm. 
 
 ```
@@ -22,7 +22,7 @@ Here, I have created GKE Cluster for the installation of the Helm.
 ```	
 GKE create a PersistentVolumeClaim ( Dynamically provisioning PersistentVolumes)and Kubernetes automatically provisions a persistent disk to the dpeloyment.
 
-### Installation fo the Helm 
+## Installation fo the Helm 
 Seperate service account will be required for the helm in order to create the resouce/objects of the charts from template on Cluster
 ```
 # kubectl create serviceaccount tiller -n kube-system 
