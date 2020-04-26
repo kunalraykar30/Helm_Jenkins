@@ -17,6 +17,8 @@ gcloud container clusters create $CLUSTER_NAME \
 printf "Cluster - $CLUSTER_NAME has been created. Below are the details of the cluster.\n"
 kubectl cluster-info
 
+# Installation of Helm, kubectx and kubens starts from here. 
+
 printf "\nDownloading Helm and copying helm to /usr/local/bin \n"
 wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
 tar -xvzf helm-v2.13.0-linux-amd64.tar.gz
