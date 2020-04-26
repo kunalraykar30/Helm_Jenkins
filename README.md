@@ -1,7 +1,7 @@
 # Helmcharts
 
 Repo provides the scrpts that do these jobs automactially. 
-* Script deploy_gke_helm.sh smoothly deploys the GKE cluster. :)
+* Script deploy_gke_helm.sh smoothly deploys the GKE cluster and Helm, kubectx and kubens. 
 
 ## Creation of GKE 
 Here, I have created GKE Cluster for the installation of the Helm. 
@@ -50,13 +50,12 @@ Seperate service account will be required for the helm in order to create the re
 ```
 ## Installation of Jenkins using Helm 
 
-Here before installation the jenkins I have modified the values of jenkins charts as per my requirements.
-
+Here before installation the jenkins I have modified the values of jenkins charts as per my requirements. The modified chart file is present in this repo
 ```
 # helm inspect values stable/jenkins > /tmp/jenkins.values
+# vi /tmp/jenkins.values
 # helm install stable/jenkins --values /tmp/jenkins.values --name myjenkins 
 
-# vi /tmp/jenkins.values
 # helm ls 
 # kubectl get po 
 ```
