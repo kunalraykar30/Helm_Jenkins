@@ -56,6 +56,7 @@ Here before installation the jenkins I have modified the values of jenkins chart
 # helm inspect values stable/jenkins > /tmp/jenkins.values
 # helm install stable/jenkins --values /tmp/jenkins.values --name myjenkins 
 
+# vi /tmp/jenkins.values
 # helm ls 
 # kubectl get po 
 ```
