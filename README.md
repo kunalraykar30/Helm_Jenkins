@@ -55,12 +55,14 @@ Once the tiller component is initialzed deployment - tiller-deploy wil be deploy
 ## Installation of Jenkins using Helm 
 
 Here before installation the jenkins I have modified the values of jenkins charts as per my requirements. The modified chart file is present in this repo. The values file on my jenkins makes use of Nodeport and you can access the jenkins on port - 32323
-The password for admin is "admin"
+The password for admin is "admin". Once the jenkins chart is stalled many K8s resouces will be created by the tiller. It will take some for objects to come up. 
 ```
 # helm inspect values stable/jenkins > /tmp/jenkins.values
 # vi /tmp/jenkins.values
 # helm install stable/jenkins --values /tmp/jenkins.values --name myjenkins 
 
 # helm ls 
-# kubectl get po 
+# kubectl get po -o wide | grep -i jenkins 
+# kubectl get no -o wide 
 ```
+Jenkins will be accessible on the NodePort 32323 of the worker node. 
