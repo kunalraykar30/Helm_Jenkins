@@ -30,7 +30,10 @@ Need to edit this section
 # wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
 # tar -xvzf helm-v2.13.0-linux-amd64.tar.gz
 # mv linux-amd64 "$HELM_PATH"
-rm $WORKDIR/helm-"$HELM_VERSION"-linux-amd64.tar.gz
+```
+#### Getting kubectx and kubens on our cloud shell. Thus allowing making easy switch between the context and namespace.
+```
+
 ```
 Seperate service account will be required for the helm in order to create the resouce/objects of the charts from template on Cluster
 ```
