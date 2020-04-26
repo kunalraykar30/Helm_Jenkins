@@ -1,6 +1,6 @@
 # Helmcharts
 
-Repo provids the scrpts that do these jobs automactially. 
+Repo provides the scrpts that do these jobs automactially. 
 Script deploy-gke.sh smoothly deploys the GKE cluster. :)
 
 ## Creation of GKE 
