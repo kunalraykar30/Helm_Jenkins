@@ -17,26 +17,25 @@ Here, I have created GKE Cluster for the installation of the Helm.
     disable-legacy-endpoints=true
     
 # gcloud container clusters list
-# kubectl cluster-info
-
-# gcloud container clusters get-credentials $CLUSTER_NAME --zone us-central1-c 
-# kubectx gke=gke_${PROJECT_ID}_us-central1-c_gke
-    
+# kubectl cluster-info   
 ```	
 GKE create a PersistentVolumeClaim ( Dynamically provisioning PersistentVolumes)and Kubernetes automatically provisions a persistent disk to the dpeloyment.
 
 ## Installation fo the Helm 
 
-Need to edit this section 
-
+Installation of Helm on cloud shell. 
 ```
 # wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
 # tar -xvzf helm-v2.13.0-linux-amd64.tar.gz
-# mv linux-amd64 "$HELM_PATH"
+# sudo cp linux-amd64/helm /usr/local/bin/
 ```
-#### Getting kubectx and kubens on our cloud shell. Thus allowing making easy switch between the context and namespace.
+#### Getting kubectx and kubens on cloud shell, thus allowing easy switch between the context and namespace.
 ```
+# git clone https://github.com/ahmetb/kubectx kubectx/
+# export PATH=$PATH:/home/kunal_raykar/
 
+# gcloud container clusters get-credentials $CLUSTER_NAME --zone us-central1-c 
+# kubectx gke=gke_${PROJECT_ID}_us-central1-c_gke
 ```
 Seperate service account will be required for the helm in order to create the resouce/objects of the charts from template on Cluster
 ```
@@ -45,7 +44,6 @@ Seperate service account will be required for the helm in order to create the re
 ```
 
 #### Initialize the tiller as server side component in kube-system 
-
 ```
 # helm init --service-account tiller 
 # helm version
