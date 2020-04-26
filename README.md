@@ -44,8 +44,12 @@ Seperate service account will be required for the helm in order to create the re
 ```
 
 #### Initialize the tiller as server side component in kube-system 
+Once the tiller component is initialzed deployment - tiller-deploy wil be deployed in kube-system namespace of the cluster. 
+
 ```
 # helm init --service-account tiller 
+# kubectl get deploy -n kube-system | grep -i tiller 
+# kubectl get po -n kube-system | grep -i tiller 
 # helm version
 ```
 ## Installation of Jenkins using Helm 
