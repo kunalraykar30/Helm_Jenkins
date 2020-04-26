@@ -54,7 +54,8 @@ Once the tiller component is initialzed deployment - tiller-deploy wil be deploy
 ```
 ## Installation of Jenkins using Helm 
 
-Here before installation the jenkins I have modified the values of jenkins charts as per my requirements. The modified chart file is present in this repo
+Here before installation the jenkins I have modified the values of jenkins charts as per my requirements. The modified chart file is present in this repo. The values file on my jenkins makes use of Nodeport and you can access the jenkins on port - 32323
+The password for admin is "admin"
 ```
 # helm inspect values stable/jenkins > /tmp/jenkins.values
 # vi /tmp/jenkins.values
