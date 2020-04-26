@@ -48,9 +48,10 @@ Seperate service account will be required for the helm in order to create the re
 # helm init --service-account tiller 
 # helm version
 ```
-Installation of Jenkins using Helm 
+## Installation of Jenkins using Helm 
 
-Here before installation the jenkins I have modified the values of jenkins charts.
+Here before installation the jenkins I have modified the values of jenkins charts as per my requirements.
+
 ```
 # helm inspect values stable/jenkins > /tmp/jenkins.values
 # helm install stable/jenkins --values /tmp/jenkins.values --name myjenkins 
