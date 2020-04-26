@@ -68,6 +68,7 @@ Once the jenkins chart is installed many K8s resouces will be created by the til
 
 # helm ls 
 # kubectl get po -o wide | grep -i jenkins 
-# kubectl get no -o wide 
+# kubectl get no -o wide
+# helm status myjenkins 
 ```
 Jenkins will be accessible on the NodePort 32323 of the worker node. 
