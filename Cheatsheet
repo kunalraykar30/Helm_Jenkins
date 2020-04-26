@@ -8,14 +8,14 @@ You will need to create the service account for tiller with admin access so till
 
 ###### Initialize the Helm ######
 
-# helm init --service-account tiller 			=> Initialize the helm and tiller. Here tiller is the serviceaccount create for helm
+# helm init --service-account tiller    => Initialize the helm and tiller. Here tiller is the serviceaccount create for helm
 
 ###### Add repos in Helm ######
 
-# helm repo add kunalcharts https://kubernetes-charts.storage.googleapis.com/           => Initialize Official Repo of Helm
-# helm repo list                                => List repos of Helm
-# helm search repo kunalcharts                  => Search charts in the Helm Repo
-# helm search repo jenkins                      => Search redis in repo
+# helm repo add kunalcharts https://kubernetes-charts.storage.googleapis.com/   => Initialize Official Repo of Helm
+# helm repo list                                                                => List repos of Helm
+# helm search repo kunalcharts                                                  => Search charts in the Helm Repo
+# helm search jenkins                                                           => Search jenkins in repo
 
 ###### Install/Delete the charts using Helm ######
 
@@ -25,13 +25,13 @@ You will need to create the service account for tiller with admin access so till
 # helm install --dry-run --debug --version 3.17.0 stable/jenkins --name=myjenkins	=> Using dry-run before the installation
 # helm install stable/jenkins 														=> Install the Jenkins archive from repo
 
-# helm install jenkins ./jenkins --namespace=helm-ns           		    			=> Install the Jenkins if you have downloaded the charts already
-# helm get values jenkins                       									=> Print values with charts was installed
+# helm install jenkins ./jenkins --namespace=helm-ns      => Install the Jenkins if you have downloaded the charts already
+# helm get values jenkins                       					=> Print values with charts was installed
 
-# helm inspect values stable/jenkins > /tmp/jenkins.values 							=> Inspect values of the chart before installation 
+# helm inspect values stable/jenkins > /tmp/jenkins.values 							        => Inspect values of the chart before installation 
 # helm install stable/jenkins --name myjenkins --values /tmp/jenkins.values 		=> Install chart with your values file and name 
 
-# helm delete myjenkins                       										=> Delete the installed chart release
+# helm delete myjenkins                       					=> Delete the installed chart release
 # helm del --purge myjenkins														=> Purge the deleted myjenkins along with pv,pvc of the pods 
 
 ###### List installed Helm Charts ######
