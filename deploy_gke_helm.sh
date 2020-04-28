@@ -22,7 +22,7 @@ kubectl cluster-info
 printf "\nDownloading Helm and copying helm to /usr/local/bin \n"
 wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
 tar -xvzf helm-v2.13.0-linux-amd64.tar.gz
-sudo cp linux-amd64/helm /usr/local/bin/
+sudo cp -f linux-amd64/helm /usr/local/bin/
 
 ## Getting kubectx and kubens on cloud shell, thus allowing easy switch between the context and namespace.
 
