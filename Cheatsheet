@@ -23,13 +23,13 @@ You will need to create the service account for tiller with admin access so till
 # helm fetch stable/jenkins           => Download/Fetch the tarball of jenkins from repo for viewing
 
 # helm install --dry-run --debug --version 3.17.0 stable/jenkins --name=myjenkins     => Using dry-run before the installation
-# helm install stable/jenkins                                                         => Install the Jenkins archive from repo
+# helm install s--name=myjenkins table/jenkins                                        => Install the Jenkins archive from repo
 
-# helm install jenkins ./jenkins --namespace=helm-ns      => Install the Jenkins if you have downloaded the charts already
+# helm install --name=myjenkins ./jenkins --namespace=helm-ns      => Install the Jenkins if you have downloaded the charts already
 # helm get values jenkins                                 => Print values with charts was installed
 
 # helm inspect values stable/jenkins > /tmp/jenkins.values                      => Inspect values of the chart before installation 
-# helm install stable/jenkins --name myjenkins --values /tmp/jenkins.values     => Install chart with your values file and name 
+# helm install stable/jenkins --name=myjenkins --values /tmp/jenkins.values     => Install chart with your values file and name 
 
 # helm delete myjenkins                                 => Delete the installed chart release
 # helm del --purge myjenkins                            => Purge the deleted myjenkins along with pv,pvc of the pods 
