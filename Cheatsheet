@@ -48,6 +48,7 @@ You will need to create the service account for tiller with admin access so till
 ###### Create your own charts ######
 
 # helm create my-charts                         => Create new charts
+# helm package my-charts/                       => Package new charts into tgz format
 # helm uninstall my-charts                      => Uninstall charts
 # helm delete my-charts                         => Delete the when everything is stuck
 
