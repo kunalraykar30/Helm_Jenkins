@@ -56,9 +56,11 @@ Once the tiller component is initialzed deployment - tiller-deploy wil be deploy
 
 Here before installation the jenkins I have modified the values of jenkins charts as per my requirements. 
 Below parameters has been modified by me in the jenkins.values before installation of the jenkins 
+```
   adminPassword: "admin"
   serviceType: NodePort
-  nodePort: 32323
+  nodePort: 32222
+```
 The password for admin is "admin" and NodePort server is used instead of the ClusterIP service.
 Once the jenkins chart is installed many K8s resouces will be created by the tiller. It will take sometime for objects to come up. 
 ```
@@ -71,4 +73,4 @@ Once the jenkins chart is installed many K8s resouces will be created by the til
 # kubectl get no -o wide
 # helm status myjenkins 
 ```
-Jenkins will be accessible on the NodePort 32323 of the worker node. 
+Jenkins will be accessible on the NodePort 32222 of the worker node. 
