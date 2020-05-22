@@ -31,8 +31,8 @@ You will need to create the service account for tiller with admin access so till
 # helm inspect values stable/jenkins > /tmp/jenkins.values                      => Inspect values of the chart before installation 
 # helm install stable/jenkins --name=myjenkins --values /tmp/jenkins.values     => Install chart with your values file and name 
 
-# helm delete myjenkins                                 => Delete the installed chart release
-# helm del --purge myjenkins                            => Purge the deleted myjenkins along with pv,pvc of the pods 
+# helm del myjenkins                                 => Delete the installed chart release
+# helm del myjenkins --purge                         => Purge the deleted myjenkins along with pv,pvc of the pods 
 
 ###### List installed Helm Charts ######
 
