@@ -24,8 +24,9 @@ GKE create a PersistentVolumeClaim ( Dynamically provisioning PersistentVolumes)
 ## Installation fo the Helm 
 
 Installation of Helm on cloud shell. 
+The latest and stable verison of helm can be downloaded from the below link https://github.com/helm/helm/releases
 ```
-# wget https://storage.googleapis.com/kubernetes-helm/helm-v2.13.0-linux-amd64.tar.gz
+# wget https://get.helm.sh/helm-v3.4.0-linux-amd64.tar.gz
 # tar -xvzf helm-v2.13.0-linux-amd64.tar.gz
 # sudo cp linux-amd64/helm /usr/local/bin/
 ```
